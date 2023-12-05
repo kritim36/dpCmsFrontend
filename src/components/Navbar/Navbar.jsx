@@ -8,7 +8,7 @@ const Navbar = () => {
     <>
     <div className="navbar">
     <a href="#home">Home</a>
-    <a onClick={()=>navigate('/createBlog')} >CreateBlog</a>
+    <a onClick={()=>navigate('/createBlog')} style = {{color : 'white'}}>CreateBlog</a>
 </div>
   
 </>
