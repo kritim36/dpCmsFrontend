@@ -7,8 +7,17 @@ const Home = () => {
   const[blogs,setBlogs] = useState([])
 
   const fetchBlogs = async()=>{
-    const response = await axios.get('http://localhost:3000/blogs')
-    setBlogs(response.data.blogs)
+    try {
+      const response = await axios.get('http://localhost:3000/blogs')
+      if(response.status == 200){
+        setBlogs(response.data.blogs)
+      }else{
+        //code here
+      }
+    
+    } catch (error) {
+      alert("something went wrong")
+    }
     console.log(response)
   }
 
@@ -28,7 +37,7 @@ const Home = () => {
     <h5 className="card-title">{blog.title}</h5>
     <h5 className="card-title">{blog.subTitle}</h5>
     <p className="card-text">{blog.description}</p>
-    <a href="#" className="btn btn-primary">Go somewhere</a>
+    <a href="#" className="btn btn-primary">See More</a>
   </div>
     )
   })}

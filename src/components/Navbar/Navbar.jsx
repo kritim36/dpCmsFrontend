@@ -1,14 +1,14 @@
 import React from 'react'
 import './Navbar.css'
+import { useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
+  const navigate = useNavigate()
   return (
     <>
     <div className="navbar">
     <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
+    <a onClick={()=>navigate('/createBlog')} >CreateBlog</a>
 </div>
   
 </>
