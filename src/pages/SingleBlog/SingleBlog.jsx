@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 
 const SingleBlog = () => {
   const{id} = useParams()
@@ -21,7 +21,7 @@ const SingleBlog = () => {
     if(response.status == 200){
       setBlog(response.data.blogs)
     }
-    console.log(response)
+    
   }
 
   useEffect(()=>{
@@ -34,7 +34,7 @@ const SingleBlog = () => {
       <h3>{blog.subTitle}</h3>
       <p>{blog.description}</p>
       <button onClick={deleteBlog} >Delete</button>
-     <Link to={`/update/${blog._id}`} > Update</Link> 
+     <Link to={`/updateBlog/${blog._id}`} > Update</Link> 
     </div>
     
   )

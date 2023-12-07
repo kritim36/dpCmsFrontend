@@ -19,7 +19,7 @@ const Home = () => {
     } catch (error) {
       alert("something went wrong")
     }
-    console.log(response)
+    
   }
 
   useEffect(()=>{
